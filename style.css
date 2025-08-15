@@ -54,3 +54,7 @@ div input {
   display: block;
   color: red;
 }
+.err {
+  display: block;
+  color: red;
+}

@@ -12,15 +12,20 @@ button.addEventListener('click', () => {
 });
 
 function isPalindrome(str) {
-  const reverseString = [...str].reverse().join('');
+  if (str !== '' && str.trim().length >= 2) {
+    const reverseString = [...str].reverse().join('');
 
-  if (reverseString === str) {
-    outputMsg.innerText = `${str} is a palindrome`;
-    outputMsg.classList.add('isPalindrome');
-    outputMsg.classList.remove('notPalindrome');
+    if (reverseString === str) {
+      outputMsg.innerText = `${str} is a palindrome`;
+      outputMsg.classList.add('isPalindrome');
+      outputMsg.classList.remove('notPalindrome');
+    } else {
+      outputMsg.innerText = `${str} is a not palindrome`;
+      outputMsg.classList.remove('isPalindrome');
+      outputMsg.classList.add('notPalindrome');
+    }
   } else {
-    outputMsg.innerText = `${str} is a not palindrome`;
-    outputMsg.classList.remove('isPalindrome');
-    outputMsg.classList.add('notPalindrome');
+    outputMsg.classList.add('err');
+    outputMsg.innerText = 'please input a word at least two characters long';
   }
 }
