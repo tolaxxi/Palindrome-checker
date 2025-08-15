@@ -17,8 +17,8 @@ function isPalindrome(str) {
 
     if (reverseString === str) {
       outputMsg.innerText = `${str} is a palindrome`;
-      outputMsg.classList.add('isPalindrome');
       outputMsg.classList.remove('notPalindrome');
+      outputMsg.classList.add('isPalindrome');
     } else {
       outputMsg.innerText = `${str} is a not palindrome`;
       outputMsg.classList.remove('isPalindrome');
